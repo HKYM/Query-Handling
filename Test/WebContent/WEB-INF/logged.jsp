@@ -8,12 +8,7 @@
 </head>
 <body>
  <p>
- 	<% 
-            String identifiant = (String) request.getAttribute("identifiant");
-            out.println("Bonjour  "+ identifiant );
-            
-            
-      %>
- </p>
+ 	Bonjour ${ param.identifiant } !!
+  </p>
 </body>
 </html>
