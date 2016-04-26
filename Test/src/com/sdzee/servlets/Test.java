@@ -37,7 +37,7 @@ public class Test extends HttpServlet {
 			String identifiant = request.getParameter("identifiant");
 			String mp = request.getParameter("mp");
 			
-	        request.setAttribute("identifiant", identifiant);
+	        
 	        
 	        
 	        try {
