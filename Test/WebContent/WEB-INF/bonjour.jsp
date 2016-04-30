@@ -11,7 +11,7 @@
 	
 	
 
-	<form method="post">
+	<form method="post" action="accueil">
         <p>
 			<label for="identifiant">Identifiant : </label>
 		

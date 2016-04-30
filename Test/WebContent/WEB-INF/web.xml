@@ -3,10 +3,18 @@
   <display-name>ProjetTechnique2016</display-name>
   <servlet>
     <servlet-name>Test</servlet-name>
-    <servlet-class>com.sdzee.servlets.Test</servlet-class>
+    <servlet-class>com.inpt.servlets.Test</servlet-class>
+  </servlet>
+  <servlet>
+    <servlet-name>AddUser</servlet-name>
+    <servlet-class>com.inpt.servlets.AddUser</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>Test</servlet-name>
     <url-pattern>/accueil</url-pattern>
+  </servlet-mapping>
+  <servlet-mapping>
+    <servlet-name>AddUser</servlet-name>
+    <url-pattern>/addUser</url-pattern>
   </servlet-mapping>
 </web-app>
