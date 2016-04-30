@@ -13,16 +13,16 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class DataAccess {
+	
 	 public static void addUser(User n){
 	        try {
-	            PreparedStatement ps = DBUtils.getPreparedStatement("insert into Users values(?,?,?,?,?,?,?)");
-	            ps.setInt(1, n.getId());
-	            ps.setString(2, n.getlastName()+n.getfirstName());
+	            PreparedStatement ps = DBUtils.getPreparedStatement("insert into Users(username,password,firstName,lastName,groups,image) values(?,?,?,?,?,?)");
+	            ps.setString(1, n.getlastName()+n.getfirstName());
+	            ps.setString(2, n.getfirstName());
 	            ps.setString(3, n.getfirstName());
-	            ps.setString(4, n.getfirstName());
-	            ps.setString(5, n.getlastName());
-	            ps.setString(6, n.getGroups());
-	            ps.setString(7, n.getImage());
+	            ps.setString(4, n.getlastName());
+	            ps.setString(5, n.getGroups());
+	            ps.setString(6, n.getImage());
 	            ps.executeUpdate();
 	            
 	        } catch (ClassNotFoundException | SQLException ex) {
@@ -36,7 +36,8 @@ public class DataAccess {
 	        try {
 	            ResultSet rs = DBUtils.getPreparedStatement("select * from users").executeQuery();
 	            while(rs.next()){
-	            	User n = new User(rs.getInt(1), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+	            	User n = new User(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
+	            	n.setId(rs.getInt(1));
 	                ls.add(n);
 					
 	            }
@@ -57,8 +58,7 @@ public class DataAccess {
 	        try {
 	            ResultSet rs = DBUtils.getPreparedStatement(sql).executeQuery();
 	            while(rs.next()){
-	                User n = new User(rs.getInt(1), rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
-	                map.put("id", n.getId());
+	                User n = new User(rs.getString(4), rs.getString(5), rs.getString(6), rs.getString(7));
 	                map.put( "firstName", n.getfirstName());
 	                map.put("lastName", n.getlastName());
 	                map.put("groups", n.getGroups());

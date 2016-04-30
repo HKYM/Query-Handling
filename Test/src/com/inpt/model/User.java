@@ -8,8 +8,7 @@ public class User {
     private String image;
     
     
-    public User(int id, String firstName, String lastName, String groups, String image) {
-        this.id = id;
+    public User(String firstName, String lastName, String groups, String image) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.groups= groups;

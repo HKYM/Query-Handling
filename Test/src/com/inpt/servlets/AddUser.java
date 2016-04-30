@@ -35,7 +35,7 @@ public class AddUser extends HttpServlet {
 				String groups = request.getParameter("groups");
 				String image= request.getParameter("image");
 				System.out.println(firstName+lastName);
-				User u = new User(10, firstName, lastName, groups, image);
+				User u = new User(firstName, lastName, groups, image);
 				DataAccess.addUser(u);
 				this.getServletContext().getRequestDispatcher( "/accueil" ).forward( request, response );
 	}
